@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Test {
 
-	public static void main(String[] args) {
+	public static <BoardDTO> void main(String[] args) {
 
 		DBUtil my = new DBUtil();		
 		my.init();
@@ -13,7 +13,7 @@ public class Test {
 		Scanner s = new Scanner(System.in);
 		
 		
-		System.out.print("[¼öÇà ±â´É ¼±ÅÃ]\n ** 1. »ý¼º 2. ¼öÁ¤ 3. »èÁ¦ 4. Á¶È¸ **\n>> ");
+		System.out.print("[ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½]\n ** 1. ï¿½ï¿½ï¿½ï¿½ 2. ï¿½ï¿½ï¿½ï¿½ 3. ï¿½ï¿½ï¿½ï¿½ 4. ï¿½ï¿½È¸ **\n>> ");
 		
 		while(true) {
 			
@@ -21,51 +21,53 @@ public class Test {
 			s.nextLine();			
 			if(num == 1) {
 				
-				System.out.println("[°ªÀ» ÀÔ·ÂÇÕ´Ï´Ù.]");
-				System.out.print("¾ÆÀÌµð ÀÔ·Â : ");
+				System.out.println("[ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½Õ´Ï´ï¿½.]");
+				System.out.print("ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ô·ï¿½ : ");
 				String id = s.next();
-				System.out.print("ÀÛ¼ºÀÚ ÀÔ·Â : ");
+				System.out.print("ï¿½Û¼ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ : ");
 				String writter = s.next();
-				System.out.print("Á¦¸ñ ÀÔ·Â : ");
+				System.out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ : ");
 				String title = s.next();
-				System.out.print("³»¿ë ÀÔ·Â : ");
+				System.out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ : ");
 				String content = s.next();
 				
 				my.insertBoard(id, writter, title, content);
 				
-				System.out.print("[¼öÇà ±â´É ¼±ÅÃ]\n ** 1. »ý¼º 2. ¼öÁ¤ 3. »èÁ¦ 4. Á¶È¸ **\n>> ");			
+				System.out.print("[ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½]\n ** 1. ï¿½ï¿½ï¿½ï¿½ 2. ï¿½ï¿½ï¿½ï¿½ 3. ï¿½ï¿½ï¿½ï¿½ 4. ï¿½ï¿½È¸ **\n>> ");			
 			}else if(num == 2) {
-				System.out.println("[°ªÀ» ¼öÁ¤ÇÕ´Ï´Ù.");
+				System.out.println("[ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
 				
-				System.out.print("¹Ù²Ü ¾ÆÀÌµð ÀÔ·Â : ");
+				System.out.print("ï¿½Ù²ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ô·ï¿½ : ");
 				String id = s.next();
-				System.out.print("¼öÁ¤ ÇÒ Á¦¸ñ ÀÔ·Â : ");
+				System.out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ : ");
 				String title = s.next();
 				
 				my.updateBoard(id, title);
 				
-				System.out.print("[¼öÇà ±â´É ¼±ÅÃ]\n ** 1. »ý¼º 2. ¼öÁ¤ 3. »èÁ¦ 4. Á¶È¸ **\n>> ");				
+				System.out.print("[ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½]\n ** 1. ï¿½ï¿½ï¿½ï¿½ 2. ï¿½ï¿½ï¿½ï¿½ 3. ï¿½ï¿½ï¿½ï¿½ 4. ï¿½ï¿½È¸ **\n>> ");				
 			}else if(num == 3) {
-				System.out.println("[°ªÀ» »èÁ¦ÇÕ´Ï´Ù.]");
-				System.out.print("»èÁ¦ ÇÒ ¾ÆÀÌµð ÀÔ·Â : ");
+				System.out.println("[ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.]");
+				System.out.print("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ô·ï¿½ : ");
 				String id = s.next();
 
 				my.deleteBoard(id);
 				
-				System.out.print("[¼öÇà ±â´É ¼±ÅÃ]\n ** 1. »ý¼º 2. ¼öÁ¤ 3. »èÁ¦ 4. Á¶È¸ **\n>> ");		
+				System.out.print("[ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½]\n ** 1. ï¿½ï¿½ï¿½ï¿½ 2. ï¿½ï¿½ï¿½ï¿½ 3. ï¿½ï¿½ï¿½ï¿½ 4. ï¿½ï¿½È¸ **\n>> ");		
 			}else if(num == 4) {
-				System.out.println("[°ªÀ» Á¶È¸ÇÕ´Ï´Ù.]");
+				System.out.println("[ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½Õ´Ï´ï¿½.]");
 				
 				ArrayList<BoardDTO> list = my.getBoard();				
 				System.out.println(list);
 				
-				System.out.print("[¼öÇà ±â´É ¼±ÅÃ]\n ** 1. »ý¼º 2. ¼öÁ¤ 3. »èÁ¦ 4. Á¶È¸ **\n>> ");
+				System.out.print("[ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½]\n ** 1. ï¿½ï¿½ï¿½ï¿½ 2. ï¿½ï¿½ï¿½ï¿½ 3. ï¿½ï¿½ï¿½ï¿½ 4. ï¿½ï¿½È¸ **\n>> ");
 			}else {
-				System.out.println("[Àß¸øµÈ ¹øÈ£]");
+				System.out.println("[ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½ï¿½È£]");
 				break;
 			}
 			
 		}
+		
+		System.out.println("Hi");
 			
 		}
 	
